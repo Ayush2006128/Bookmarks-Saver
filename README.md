@@ -1,0 +1,4 @@
+# Bookmarks Saver
+
+## License
+MIT
