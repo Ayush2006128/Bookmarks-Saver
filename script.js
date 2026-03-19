@@ -15,6 +15,7 @@ saveBtn.addEventListener('click', () => {
         alert('Bookmark saved!');
         nameInput.value = '';
         urlInput.value = '';
+        displayBookmarks();
     } else {
         alert('Please enter both name and URL.');
     }
@@ -43,4 +44,4 @@ function displayBookmarks() {
     });
 }
 
-window.onload = displayBookmarks;
+window.onload = displayBookmarks();

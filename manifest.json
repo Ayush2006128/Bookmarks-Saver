@@ -1,0 +1,17 @@
+{
+  "name": "Bookmarks Saver",
+  "short_name": "Bookmarks",
+  "description": "A simple app to save and manage your favorite bookmarks.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1e40af",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
