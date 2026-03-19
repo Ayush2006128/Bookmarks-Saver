@@ -23,13 +23,22 @@ saveBtn.addEventListener('click', () => {
 function displayBookmarks() {
     const bookmarks = JSON.parse(localStorage.getItem('bookmarks')) || [];
     bookmarksList.innerHTML = '';
-    bookmarks.forEach(bookmark => {
+    bookmarks.forEach((bookmark, index) => {
         const li = document.createElement('li');
         const a = document.createElement('a');
+        const rmBtn = document.createElement('button');
+        rmBtn.id = 'remove-btn';
+        rmBtn.textContent = 'Remove';
         a.href = bookmark.url;
         a.textContent = bookmark.name;
         a.target = '_blank';
         li.appendChild(a);
+        li.appendChild(rmBtn);
+        rmBtn.addEventListener('click', () => {
+            bookmarks.splice(index, 1);
+            localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+            displayBookmarks();
+        });
         bookmarksList.appendChild(li);
     });
 }
