@@ -23,7 +23,7 @@ a:hover {
 }
 
 .app-container {
-    max-width: 600vw;
+    max-width: 600px;
     width: 90%;
     margin: 50px auto;
     padding: 20px;

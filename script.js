@@ -1,3 +1,15 @@
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js')
+            .then((registration) => {
+                console.log('ServiceWorker registration successful with scope: ', registration.scope);
+            })
+            .catch((error) => {
+                console.log('ServiceWorker registration failed: ', error);
+            });
+    });
+}
+
 const nameInput = document.getElementById('name');
 const urlInput = document.getElementById('url');
 const saveBtn = document.getElementById('save-btn');
@@ -36,12 +48,14 @@ function displayBookmarks() {
         li.appendChild(a);
         li.appendChild(rmBtn);
         rmBtn.addEventListener('click', () => {
-            bookmarks.splice(index, 1);
-            localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
-            displayBookmarks();
+            if (confirm(`Are you sure you want to remove ${bookmark.name}?`)) {
+                bookmarks.splice(index, 1);
+                localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+                displayBookmarks();
+            }
         });
         bookmarksList.appendChild(li);
     });
 }
 
-window.onload = displayBookmarks();
+window.onload = displayBookmarks;
