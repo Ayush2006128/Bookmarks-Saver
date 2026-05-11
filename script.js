@@ -17,6 +17,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
     .from('.input-field', { duration: 0.8, opacity: 0, x: -40, ease: 'back.out(1.7)', stagger: 0.2 })
     .from('.save-button', { duration: 0.8, opacity: 0, y: -40, ease: 'back.out(1.7)' })
     .from('.bookmark-list', { duration: 0.8, opacity: 0, y: 40, ease: 'back.out(1.7)' });
+
+  displayBookmarks();
 });
 
 const nameInput = document.getElementById('name');
