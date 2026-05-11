@@ -10,6 +10,10 @@ if ('serviceWorker' in navigator) {
     });
 }
 
+document.addEventListener('DOMContentLoaded', (event) => {
+    gsap.to('', {duration: 1, opacity: 0, y: '-40', ease: 'back.inOut'})
+});
+
 const nameInput = document.getElementById('name');
 const urlInput = document.getElementById('url');
 const saveBtn = document.getElementById('save-btn');
